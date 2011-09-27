@@ -6,6 +6,7 @@ gem "pg"
 gem "inherited_resources"
 gem "haml"
 gem "simple_form"
+gem "devise"
 
 # Gems used only for assets and not required
 # in production environments by default.
