@@ -4,10 +4,9 @@ Feature: Submitting links
   As an anonymous user
   I want to be able to submit a link
 
-  @wip
   Scenario: Submitting a link with required fields
     When I visit the link submission form
-    And I submit a link
+    And I submit a link with all required fields
     Then I should see a confirmation message
 
   Scenario: Submitting a link with too few fields
