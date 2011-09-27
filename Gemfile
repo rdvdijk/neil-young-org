@@ -22,5 +22,6 @@ group :development, :test do
   gem "cucumber-rails"
   gem "shoulda-matchers"
   gem "launchy"
+  gem "fabrication"
 end
 

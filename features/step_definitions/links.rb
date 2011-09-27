@@ -21,9 +21,13 @@ Then /^I should see the form again$/ do
   page.should have_selector("form[action='#{links_path}']")
 end
 
-Then /^see error messages on the missing fields$/ do
+Then /^I should see error messages on the missing fields$/ do
   field_with_errors("URL").should_not be_nil
   field_with_errors("Title").should_not be_nil
   field_with_errors("Description").should_not be_nil
 end
 
+Then /^I can select a category$/ do
+  page.find_field "Category"
+  page.select "Other", :from => "Category"
+end

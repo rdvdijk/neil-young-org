@@ -13,5 +13,9 @@ Feature: Submitting links
     When I visit the link submission form
     And I submit a link without all required fields
     Then I should see the form again
-    And see error messages on the missing fields
+    And I should see error messages on the missing fields
+
+  Scenario: Select category for new link
+    When I visit the link submission form
+    Then I can select a category
 
