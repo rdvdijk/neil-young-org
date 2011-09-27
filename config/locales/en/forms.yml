@@ -1,0 +1,6 @@
+en:
+  flash:
+    links:
+      create:
+        notice: "Thank you for your link! A moderator will take a look at it soon."
+

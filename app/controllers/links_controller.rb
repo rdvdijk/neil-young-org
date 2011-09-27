@@ -1,0 +1,3 @@
+class LinksController < ResourcesController
+
+end
