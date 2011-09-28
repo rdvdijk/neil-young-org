@@ -1,4 +1,3 @@
-@wip
 Feature: Accepting links
 
   In order to add links to the site

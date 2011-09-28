@@ -1,0 +1,7 @@
+#!/bin/sh
+rm -rf coverage
+time {
+  export COVERAGE=on
+  rspec spec
+  cucumber features
+}

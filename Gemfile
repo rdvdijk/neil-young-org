@@ -25,5 +25,6 @@ group :development, :test do
   gem "launchy"
   gem "fabrication"
   gem "database_cleaner"
+  gem "simplecov"
 end
 
