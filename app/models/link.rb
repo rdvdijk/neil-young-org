@@ -1,6 +1,7 @@
 class Link < ActiveRecord::Base
   validates_presence_of :url, :title, :description
   belongs_to :category
+  belongs_to :verifier, :class_name => "User"
 
   scope :visible, where(:state => "accepted")
   scope :submitted, where(:state => "submitted")

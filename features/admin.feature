@@ -26,11 +26,21 @@ Feature: Accepting links
     And I accept the link
     Then I should see the submitted link on the frontpage
 
+  Scenario: Accept submitted link verifier
+    When I click on the title of the submitted link
+    And I accept the link
+    Then I should be the verifier of the submitted link
+
   Scenario: Deny submitted link
     When I click on the title of the submitted link
     And I deny the link
     Then I should not see the submitted link
     And I should not see the submitted link on the frontpage
+
+  Scenario: Deny submitted link verifier
+    When I click on the title of the submitted link
+    And I deny the link
+    Then I should be the verifier of the submitted link
 
   Scenario: Accept submitted link shows next
     When there is another submitted link

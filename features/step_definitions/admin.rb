@@ -55,3 +55,8 @@ Then /^I should see another submitted link form$/ do
   page.should have_simple_form(admin_link_path(@another_submitted_link))
   page.should have_selector("input[type=text]", :value => @another_submitted_link.title)
 end
+
+Then /^I should be the verifier of the submitted link$/ do
+  @submitted_link.reload.verifier.should == @current_user
+end
+

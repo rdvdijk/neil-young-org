@@ -1,5 +1,6 @@
 = simple_form_for [:admin, @link] do |form|
   = render "shared/links/form", :form => form
+  = form.input :verifier_id, :as => :hidden, :input_html => { :value => current_user.id }
   = form.submit
   = form.submit t(".accept")
   = form.submit t(".deny")
