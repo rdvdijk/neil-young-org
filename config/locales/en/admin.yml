@@ -1,0 +1,6 @@
+en:
+  admin:
+    links:
+      edit:
+        accept: "accept link"
+        deny: "deny link"

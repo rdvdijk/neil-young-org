@@ -18,7 +18,7 @@ Then /^I should see a confirmation message$/ do
 end
 
 Then /^I should see the form again$/ do
-  page.should have_selector("form[action='#{links_path}']")
+  page.should have_simple_form(links_path)
 end
 
 Then /^I should see error messages on the missing fields$/ do
@@ -30,4 +30,19 @@ end
 Then /^I can select a category$/ do
   page.find_field "Category"
   page.select "Other", :from => "Category"
+end
+
+Then /^I don't see the link on the frontpage$/ do
+  visit root_path
+  page.should_not have_content(Link.last.title)
+end
+
+Then /^I should see the submitted link on the frontpage$/ do
+  visit root_url
+  page.should have_content(@submitted_link.title)
+end
+
+Then /^I should not see the submitted link on the frontpage$/ do
+  visit root_url
+  page.should_not have_content(@submitted_link.title)
 end

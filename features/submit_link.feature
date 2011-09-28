@@ -19,3 +19,8 @@ Feature: Submitting links
     When I visit the link submission form
     Then I can select a category
 
+  Scenario: Verify visibility of link after submission
+    When I visit the link submission form
+    And I submit a link with all required fields
+    Then I don't see the link on the frontpage
+

@@ -19,4 +19,12 @@ capybara = Module.new do
 
 end
 
+class Capybara::Session
+
+  def has_simple_form?(action)
+    has_selector?("form[action='#{action}']")
+  end
+
+end
+
 World capybara

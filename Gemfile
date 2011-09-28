@@ -7,6 +7,7 @@ gem "inherited_resources"
 gem "haml"
 gem "simple_form"
 gem "devise"
+gem "state_machine"
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -18,7 +19,7 @@ end
 
 gem "jquery-rails"
 
-group :development, :test do
+group :test do
   gem "rspec-rails"
   gem "cucumber-rails"
   gem "shoulda-matchers"

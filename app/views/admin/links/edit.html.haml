@@ -1,0 +1,5 @@
+= simple_form_for [:admin, @link] do |form|
+  = render "shared/links/form", :form => form
+  = form.submit
+  = form.submit t(".accept")
+  = form.submit t(".deny")
