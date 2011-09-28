@@ -3,5 +3,9 @@ NeilYoungOrg::Application.routes.draw do
 
   resources :links
 
+  namespace :admin do
+    resources :links
+  end
+
   root :to => "links#index"
 end

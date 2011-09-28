@@ -24,5 +24,6 @@ group :development, :test do
   gem "shoulda-matchers"
   gem "launchy"
   gem "fabrication"
+  gem "database_cleaner"
 end
 
