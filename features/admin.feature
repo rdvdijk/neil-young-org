@@ -10,7 +10,7 @@ Feature: Accepting links
     And I visit the submitted links page
 
   Scenario: List submitted links
-    Then I should see the submitted link
+    Then I should see the submitted link on the admin page
 
   Scenario: Show submitted link
     When I click on the title of the submitted link
@@ -37,5 +37,4 @@ Feature: Accepting links
     And I click on the title of the submitted link
     And I accept the link
     Then I should see another submitted link form
-
 

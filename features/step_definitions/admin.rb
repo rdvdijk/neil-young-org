@@ -14,7 +14,7 @@ When /^I visit the submitted links page$/ do
   visit admin_links_path
 end
 
-Then /^I should see the submitted link$/ do
+Then /^I should see the submitted link on the admin page$/ do
   page.should have_content(@submitted_link.title)
 end
 
