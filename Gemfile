@@ -19,8 +19,11 @@ end
 
 gem "jquery-rails"
 
+group :development, :test do
+  gem "rspec-rails" # in :development for rake tasks
+end
+
 group :test do
-  gem "rspec-rails"
   gem "cucumber-rails"
   gem "shoulda-matchers"
   gem "launchy"

@@ -46,3 +46,12 @@ end
 When /^I deny the link$/ do
   click_button "deny link"
 end
+
+When /^there is another submitted link$/ do
+  @another_submitted_link = Fabricate(:link, :title => "Another link")
+end
+
+Then /^I should see another submitted link form$/ do
+  page.should have_simple_form(admin_link_path(@another_submitted_link))
+  page.should have_selector("input[type=text]", :value => @another_submitted_link.title)
+end

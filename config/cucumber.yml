@@ -1,0 +1,3 @@
+default: --tags ~@wip features
+wip: --wip --tags @wip features
+
