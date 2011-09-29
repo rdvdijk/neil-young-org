@@ -11,18 +11,28 @@ describe Link do
 
   context "scopes" do
 
-    it "the visible scope should only select visible links" do
+    it "should only select visible links for the visited scope" do
       new_link = Fabricate(:link)
       visible_link = Fabricate(:link, :state => "accepted")
 
       Link.visible.to_a.should =~ [ visible_link ]
     end
 
-    it "the submitted scope should only select submitted links" do
+    it "should only select submitted links for the submitted scope" do
       new_link = Fabricate(:link)
       visible_link = Fabricate(:link, :state => "accepted")
 
       Link.submitted.to_a.should =~ [ new_link ]
+    end
+
+    it "should only select reported links for the reported scope" do
+      visible_link1 = Fabricate(:link, :state => "accepted")
+      visible_link2 = Fabricate(:link, :state => "accepted")
+
+      visible_link2.broken_link_reports.build
+      visible_link2.save!
+
+      Link.reported.to_a.should =~ [ visible_link2 ]
     end
 
   end

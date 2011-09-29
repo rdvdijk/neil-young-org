@@ -12,7 +12,6 @@ Feature: Reporting links
     And I report a link
     Then I should see a report confirmation message
 
-  @wip
   Scenario: Show reported broken links in admin
     When I visit the frontpage
     And I report a link

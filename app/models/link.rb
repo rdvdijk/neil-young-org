@@ -17,4 +17,8 @@ class Link < ActiveRecord::Base
     end
   end
 
+  def self.reported
+    BrokenLinkReport.joins(:link).collect(&:link).uniq
+  end
+
 end

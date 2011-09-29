@@ -1,5 +1,9 @@
 class Admin::LinksController < Admin::ResourcesController
 
+  def index
+    @reported_links = Link.reported
+  end
+
   def update
     state_changed = accept_or_deny!
     update! { redirect_path(state_changed) }
