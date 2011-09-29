@@ -1,7 +1,9 @@
 NeilYoungOrg::Application.routes.draw do
   devise_for :users
 
-  resources :links
+  resources :links do
+    resources :broken_link_reports, :as => :reports
+  end
 
   namespace :admin do
     resources :links

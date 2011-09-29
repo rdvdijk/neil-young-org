@@ -3,4 +3,7 @@ en:
     links:
       create:
         notice: "Thank you for your link! A moderator will take a look at it soon."
+    broken_link_reports:
+      create:
+        notice: "Thank you for reporting a broken link!"
 

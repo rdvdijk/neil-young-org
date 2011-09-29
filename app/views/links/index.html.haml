@@ -1,2 +1,3 @@
 - collection.each do |link|
   = link.title
+  = link_to t(".report_broken.title"), link_reports_path(link), :method => :post

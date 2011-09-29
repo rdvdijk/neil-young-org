@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110928211355) do
+ActiveRecord::Schema.define(:version => 20110929064255) do
+
+  create_table "broken_link_reports", :force => true do |t|
+    t.integer  "link_id"
+    t.string   "ip_address"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "broken_link_reports", ["link_id"], :name => "index_broken_link_reports_on_link_id"
 
   create_table "categories", :force => true do |t|
     t.string   "name"

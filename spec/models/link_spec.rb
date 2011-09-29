@@ -7,6 +7,7 @@ describe Link do
 
   it { should belong_to :category }
   it { should belong_to :verifier }
+  it { should have_many :broken_link_reports }
 
   context "scopes" do
 

@@ -60,3 +60,7 @@ Then /^I should be the verifier of the submitted link$/ do
   @submitted_link.reload.verifier.should == @current_user
 end
 
+Then /^I should see the reported broken link$/ do
+  page.should have_content(@visible_link.title)
+end
+

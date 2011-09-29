@@ -1,3 +1,7 @@
+When /^I visit the frontpage$/ do
+  visit root_path
+end
+
 When /^I visit the link submission form$/ do
   visit new_link_path
 end
@@ -13,7 +17,7 @@ When /^I submit a link without all required fields$/ do
   submit_form
 end
 
-Then /^I should see a confirmation message$/ do
+Then /^I should see a submission confirmation message$/ do
   page.should have_content("Thank you for your link! A moderator will take a look at it soon.")
 end
 
@@ -45,4 +49,16 @@ end
 Then /^I should not see the submitted link on the frontpage$/ do
   visit root_url
   page.should_not have_content(@submitted_link.title)
+end
+
+Given /^there is a visible link$/ do
+  @visible_link = Fabricate :link, :state => "accepted"
+end
+
+When /^I report a link$/ do
+  click_link "report broken link"
+end
+
+Then /^I should see a report confirmation message$/ do
+  page.should have_content("Thank you for reporting a broken link!")
 end
