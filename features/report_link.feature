@@ -18,3 +18,19 @@ Feature: Reporting links
     And I am logged in
     And I visit the submitted links page
     Then I should see the reported broken link
+
+  Scenario: Confirm reported broken link
+    When there is a broken link report
+    And I am logged in
+    And I visit the submitted links page
+    And I confirm the broken link
+    Then I should not see the the reported broken link
+    And I should not see the reported link on the frontpage
+
+  Scenario: Deny reported broken link
+    When there is a broken link report
+    And I am logged in
+    And I visit the submitted links page
+    And I deny the broken link report
+    Then I should not see the the reported broken link
+    And I should see the reported link on the frontpage

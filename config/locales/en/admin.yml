@@ -4,3 +4,6 @@ en:
       edit:
         accept: "accept link"
         deny: "deny link"
+      index:
+        confirm: "confirm"
+        deny: "deny"

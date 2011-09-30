@@ -51,12 +51,28 @@ Then /^I should not see the submitted link on the frontpage$/ do
   page.should_not have_content(@submitted_link.title)
 end
 
+Then /^I should not see the reported link on the frontpage$/ do
+  visit root_url
+  page.should_not have_content(@dead_link.title)
+end
+
+Then /^I should see the reported link on the frontpage$/ do
+  visit root_url
+  page.should have_content(@dead_link.title)
+end
+
 Given /^there is a visible link$/ do
   @visible_link = Fabricate :link, :state => "accepted"
 end
 
 When /^I report a link$/ do
   click_link "report broken link"
+end
+
+When /^there is a broken link report$/ do
+  @dead_link = Fabricate :link, :state => "accepted"
+  @dead_link.broken_link_reports.build
+  @dead_link.save!
 end
 
 Then /^I should see a report confirmation message$/ do

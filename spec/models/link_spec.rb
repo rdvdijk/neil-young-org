@@ -35,6 +35,16 @@ describe Link do
       Link.reported.to_a.should =~ [ visible_link2 ]
     end
 
+    it "should not select denied reported links for the reported scope" do
+      visible_link1 = Fabricate(:link, :state => "accepted")
+      visible_link2 = Fabricate(:link, :state => "accepted")
+
+      visible_link2.broken_link_reports.build(:state => "denied")
+      visible_link2.save!
+
+      Link.reported.to_a.should =~ []
+    end
+
   end
 
   context "states" do
@@ -54,6 +64,27 @@ describe Link do
     it "should transition to denied state" do
       subject.deny!
       subject.should be_denied
+    end
+
+  end
+
+  context "broken links" do
+
+    before do
+      @link = Fabricate(:link)
+      @link.broken_link_reports.build
+      @link.save!
+    end
+    subject { @link }
+
+    it "should change state when confirmed broken" do
+      @link.confirm_broken!
+      @link.should be_broken
+    end
+
+    it "should not be reported if denied broken" do
+      @link.deny_broken!
+      Link.reported.should_not include @link
     end
 
   end

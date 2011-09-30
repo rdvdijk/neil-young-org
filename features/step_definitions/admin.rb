@@ -64,3 +64,15 @@ Then /^I should see the reported broken link$/ do
   page.should have_content(@visible_link.title)
 end
 
+When /^I confirm the broken link$/ do
+  click_link "confirm"
+end
+
+When /^I deny the broken link report$/ do
+  click_link "deny"
+end
+
+Then /^I should not see the the reported broken link$/ do
+  page.should_not have_content(@dead_link.title)
+end
+

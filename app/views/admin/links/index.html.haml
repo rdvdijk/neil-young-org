@@ -3,3 +3,5 @@
 
 - @reported_links.each do |link|
   = link.title
+  = link_to t(".confirm"), confirm_broken_admin_link_path(link), :method => :put
+  = link_to t(".deny"), deny_broken_admin_link_path(link), :method => :put

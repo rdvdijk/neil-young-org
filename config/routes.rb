@@ -6,7 +6,12 @@ NeilYoungOrg::Application.routes.draw do
   end
 
   namespace :admin do
-    resources :links
+    resources :links do
+      member do
+        put :confirm_broken
+        put :deny_broken
+      end
+    end
   end
 
   root :to => "links#index"

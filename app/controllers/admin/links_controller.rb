@@ -9,6 +9,16 @@ class Admin::LinksController < Admin::ResourcesController
     update! { redirect_path(state_changed) }
   end
 
+  def confirm_broken
+    resource.confirm_broken!
+    redirect_to :back
+  end
+
+  def deny_broken
+    resource.deny_broken!
+    redirect_to :back
+  end
+
   protected
 
   def collection
