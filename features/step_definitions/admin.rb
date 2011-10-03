@@ -8,7 +8,10 @@ end
 
 When /^I log in as the feeds user$/ do
   auth_token = "SECRETTOKEN"
-  @feeds_user = Fabricate(:user, :email => "feedsuser@neilyoung.org", :authentication_token => auth_token)
+  @feeds_user = Fabricate(:user,
+                          :email => "feedsuser@neilyoung.org",
+                          :name => "Feeds user",
+                          :authentication_token => auth_token)
   visit new_user_session_path(:auth_token => auth_token)
 end
 
@@ -66,7 +69,7 @@ Then /^I should see the feeds link on the admin page$/ do
 end
 
 Then /^the feed user is the author$/ do
-  page.should have_content("feedsuser")
+  page.should have_content(@feeds_user.name)
 end
 
 # verifying links:
