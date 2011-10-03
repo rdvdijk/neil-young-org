@@ -12,6 +12,13 @@ Feature: Accepting links
   Scenario: List submitted links
     Then I should see the submitted link on the admin page
 
+  Scenario: Adding a link
+    When I submit a link on the admin page
+    Then I should see the link directly on the frontpage
+
+  Scenario: Adding a link form buttons
+    Then I should not see the accept and deny buttons
+
   Scenario: Show submitted link
     When I click on the title of the submitted link
     Then I should see the link acceptance form

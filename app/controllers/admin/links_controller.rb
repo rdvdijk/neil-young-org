@@ -2,11 +2,18 @@ class Admin::LinksController < Admin::ResourcesController
 
   def index
     @reported_links = Link.reported
+    @link = Link.new(:state => "accepted")
   end
 
   def update
     state_changed = accept_or_deny!
     update! { redirect_path(state_changed) }
+  end
+
+  def create
+    @link = Link.new(params[:link])
+    @link.accept!
+    create! { admin_links_path }
   end
 
   def confirm_broken
@@ -29,9 +36,9 @@ class Admin::LinksController < Admin::ResourcesController
 
   def accept_or_deny!
     case params[:commit]
-    when I18n.t("admin.links.edit.accept")
+    when I18n.t("admin.links.form.accept")
       resource.accept!
-    when I18n.t("admin.links.edit.deny")
+    when I18n.t("admin.links.form.deny")
       resource.deny!
     end
   end

@@ -1,7 +1,7 @@
 en:
   admin:
     links:
-      edit:
+      form:
         accept: "accept link"
         deny: "deny link"
       index:

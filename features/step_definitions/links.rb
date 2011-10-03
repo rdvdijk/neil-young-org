@@ -13,6 +13,13 @@ When /^I submit a link with all required fields$/ do
   submit_form
 end
 
+When /^I submit a feed link with all required fields$/ do
+  fill_in "URL",          :with => "http://www.interesting.com/"
+  fill_in "Title",        :with => "Interesting Inc."
+  fill_in "Description",  :with => "Excellent!"
+  submit_form
+end
+
 When /^I submit a link without all required fields$/ do
   submit_form
 end
