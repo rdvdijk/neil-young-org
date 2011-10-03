@@ -11,5 +11,5 @@ Feature: Remotely submitting links
     And I log out
     And I am logged in
     Then I should see the feeds link on the admin page
-    And the feed user is the author
+    And the feed user is the creator
 

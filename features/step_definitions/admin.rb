@@ -68,7 +68,7 @@ Then /^I should see the feeds link on the admin page$/ do
   page.should have_content("Interesting Inc.")
 end
 
-Then /^the feed user is the author$/ do
+Then /^the feed user is the creator$/ do
   page.should have_content(@feeds_user.name)
 end
 
