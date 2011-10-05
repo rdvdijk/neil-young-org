@@ -1,4 +1,9 @@
 en:
+  helpers:
+    submit:
+      link:
+        create: "add link"
+        update: "edit link"
   flash:
     links:
       create:
