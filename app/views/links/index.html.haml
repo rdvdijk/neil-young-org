@@ -1,3 +1,4 @@
 - collection.each do |link|
   = link.title
+  = link_to t(".edit"), edit_admin_link_path(link) if user_signed_in?
   = link_to t(".report_broken.title"), link_reports_path(link), :method => :post

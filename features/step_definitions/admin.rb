@@ -119,3 +119,18 @@ Then /^I should not see the the reported broken link$/ do
   page.should_not have_content(@dead_link.title)
 end
 
+When /^I edit that link$/ do
+  visit root_path
+  click_link "edit"
+  fill_in "Title", :with => "edited title"
+  submit_form
+end
+
+Then /^I should see the changes on the frontpage$/ do
+  visit root_path
+  page.should have_content "edited title"
+end
+
+Then /^I can't edit the link$/ do
+  page.should_not have_content "edit"
+end

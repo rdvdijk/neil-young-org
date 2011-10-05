@@ -1,5 +1,6 @@
 en:
   links:
     index:
+      edit: "edit"
       report_broken:
         title: "report broken link"

@@ -55,3 +55,13 @@ Feature: Accepting links
     And I accept the link
     Then I should see another submitted link form
 
+  Scenario: Editing accepted links
+    When there is a visible link
+    And I edit that link
+    Then I should see the changes on the frontpage
+
+  Scenario: Can't edit links when logged out
+    When there is a visible link
+    And I log out
+    Then I can't edit the link
+
