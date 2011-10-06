@@ -15,13 +15,13 @@ Feature: Reporting links
   Scenario: Show reported broken links in admin
     When I visit the frontpage
     And I report a link
-    And I am logged in
+    And I am logged in as an admin
     And I visit the submitted links page
     Then I should see the reported broken link
 
   Scenario: Confirm reported broken link
     When there is a broken link report
-    And I am logged in
+    And I am logged in as an admin
     And I visit the submitted links page
     And I confirm the broken link
     Then I should not see the the reported broken link
@@ -29,7 +29,7 @@ Feature: Reporting links
 
   Scenario: Deny reported broken link
     When there is a broken link report
-    And I am logged in
+    And I am logged in as an admin
     And I visit the submitted links page
     And I deny the broken link report
     Then I should not see the the reported broken link

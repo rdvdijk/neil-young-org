@@ -5,7 +5,7 @@ Feature: Accepting links
   I want to be able to accept links
 
   Background:
-    When I am logged in
+    When I am logged in as an admin
     And there are submitted links
     And I visit the submitted links page
 
