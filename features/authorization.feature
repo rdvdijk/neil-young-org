@@ -1,4 +1,3 @@
-@wip
 Feature: Authorizating
 
   In order to secure the site beyond authentication
@@ -22,6 +21,7 @@ Feature: Authorizating
     And I visit the link submission form
     Then I should not be asked to sign in
 
+  @wip
   Scenario:
     When I am logged in as the feeds user
     And I visit the admin pages
@@ -36,7 +36,7 @@ Feature: Authorizating
   Scenario:
     When I am logged in as an admin
     And I visit the admin pages
-    Then I should not be asked to log in
+    Then I should not be asked to sign in
 
   Scenario:
     When I am logged in as an admin

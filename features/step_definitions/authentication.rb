@@ -20,6 +20,9 @@ When /^I log out$/ do
 end
 
 When /^I'm not logged in$/ do
-  pending
+  visit root_path
+  if page.has_content?("log out")
+    click_link "log out"
+  end
 end
 

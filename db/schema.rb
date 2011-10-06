@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111005210730) do
+ActiveRecord::Schema.define(:version => 20111006063741) do
 
   create_table "broken_link_reports", :force => true do |t|
     t.integer  "link_id"
@@ -49,6 +49,8 @@ ActiveRecord::Schema.define(:version => 20111005210730) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "admin"
+    t.boolean  "super_admin"
   end
 
   create_table "roles_users", :id => false, :force => true do |t|
